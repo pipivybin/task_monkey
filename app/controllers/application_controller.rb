@@ -22,3 +22,6 @@ class ApplicationController < Sinatra::Base
   end
 
 end
+
+
+##how to clear database???
