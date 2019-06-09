@@ -5,12 +5,12 @@ Three models
     > username
     > password_digest
 - Task
-    > task_name
+    > name
     > descrption
-    > Create date
+    > create_time
     > Deadline
 - Project
-    > project_name
+    > name
 
 Controllers
 - UserController
