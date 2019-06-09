@@ -3,7 +3,8 @@ require './config/environment'
 class ProjectsController < ApplicationController
 
 get '/projects' do
-    "Hello world"
+    @user = User.find(session[:user_id])
+    erb :'/projects/projects'
 end
 
 end

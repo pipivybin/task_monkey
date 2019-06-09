@@ -1,6 +1,6 @@
 Welcome to task_monkey gem!
 
-Three models
+<!-- Three models
 - User
     > username
     > password_digest
@@ -10,21 +10,15 @@ Three models
     > create_time
     > Deadline
 - Project
-    > name
+    > name -->
 
-Controllers
-- UserController
-    > index
-        > welcome; log in or sign up
-    > log
-- TaskController
 
 Views
-- User:
+<!-- - User:
     > index
         > welcome; log in or sign up
     > login
-    > signup
+    > signup -->
 - Task:
     > new: create new task; create or assign to a project
     > edit: assign to projects
