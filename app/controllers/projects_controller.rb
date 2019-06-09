@@ -8,4 +8,9 @@ get '/projects' do
     erb :'/projects/projects'
 end
 
+get '/projects/new' do
+    @users = User.all
+    erb :'projects/new'
+end
+
 end
