@@ -3,7 +3,7 @@ require './config/environment'
 class UsersController < ApplicationController
 
 get '/' do
- "hello world"
+ erb :'users/index'
 end
 
 end
