@@ -1,6 +1,15 @@
-<h2>You are assigned to the below projects:</h2>
+<h2>Hello <%= @user.username %>! You are working on the below projects:</h2>
 <br>
-@user.tasks. do |t|
-
-end
+<% @projects.each do |p| %>
+    <h4><%= p.name %></h4>
+    <% p.tasks.each do |t| %>
+        <ul>
+        <li><%=t.name%></li>
+        <li><%=t.description%></li>
+        <li><%=t.create_date%></li>
+        <li><%=t.deadline%></li>
+        </ul>
+        <br>
+    <% end %>
+<% end %>
 
