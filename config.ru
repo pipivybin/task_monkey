@@ -7,8 +7,8 @@ end
 use Rack::MethodOverride
 
 
-use UserController
-use TaskController
-use ProjectController
+use UsersController
+use TasksController
+use ProjectsController
 
 run ApplicationController

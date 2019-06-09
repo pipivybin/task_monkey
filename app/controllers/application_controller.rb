@@ -11,7 +11,10 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
-  helper do
+  helpers do
+    def logged_in?
+      "hello world"
+    end
 
   end
 
