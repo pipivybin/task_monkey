@@ -13,4 +13,20 @@ get '/projects/new' do
     erb :'projects/new'
 end
 
+post '/projects/new' do
+    if !params[:project][:name].empty?
+        @project = Project.create(params[:project])
+        params[:project][:user_ids].each do |i|
+            user = User.find(i)
+            user.projects << @project
+            user.save
+            project.users << user
+            project.save
+            user.tasks.create(params[:task])
+        end
+
+    else 
+    end
+end
+
 end
