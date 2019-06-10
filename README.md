@@ -1,4 +1,4 @@
-##Welcome to task_monkey gem!
+Welcome to task_monkey gem!
 
 Task Monkey is an everyday task management tool created for you. Each of your task assignments is managed through a project. You can create a project with tasks assigned. Signup/login is required to be able to view and manage your tasks. Have fun managing tasks!
 
