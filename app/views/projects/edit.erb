@@ -1,0 +1,20 @@
+
+<form method="post" action="/projects/<%=@project.id%>/edit">
+<input type="hidden" name="_method" value="patch">
+<h1>You can edit your project here:</h1>
+<br>
+<h4><input type="text" name=project[name] value="<%= @project.name %>"></h4>
+    <% @project.tasks.each do |t| %>
+        <ul>
+        <input type="text" name=task[name] value="<%= t.name %>">
+        <li><input type="text" name=task[description] value="<%= t.description %>"></li>
+        <li><input type="text" name=task[create_date] value="<%= t.create_date %>"></li>
+        <li><input type="text" name=task[deadline] value="<%= t.deadline %>"></li>
+        </ul>
+        <br>
+        <br>
+    <% end %>
+
+
+<input type="submit" value="Edit">
+</form>

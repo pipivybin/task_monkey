@@ -7,8 +7,8 @@ Welcome to task_monkey gem!
 - Task
     > name
     > descrption
-    > create_time
-    > Deadline
+    > create_time format wrong
+    > Deadline format wrong
 - Project
     > name -->
 
@@ -24,7 +24,7 @@ Views
     > edit: assign to projects
 - Project:
     > list: a list of projects assigned
-    > show: individual project; show assigned users; show tasks; buttons to delete or edit on a project
+    > show: individual project; show tasks; buttons to delete or edit on a project
     > edit: edit project; edit tasks; edit assigned user
     > delete: delete project (show as finish?); delete tasks
     > new: add new projects; create new tasks; create and assign new users; 

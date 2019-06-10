@@ -1,8 +1,9 @@
-<h2>Hello <%= @user.username %>! You have the below projects assigned to you:</h2>
+<h2>Hello <%= @user.username %>! Here is Project "<%= @project.name %>" </h2>
 <br>
+
 <% @projects.each do |p| %>
     
-    <h4><%= p.name %></h4>
+    <h4><a href="/projects/<%=p.id%>/edit"><%= p.name %></a></h4>
     <% p.tasks.each do |t| %>
         <ul>
         <li>Task Name: <%=t.name%></li>
@@ -10,6 +11,11 @@
         <li>Task Create Date: <%=t.create_date%></li>
         <li>Task Deadline: <%=t.deadline%></li>
         </ul>
+        <br>
+        <form method="post" action="/projects/<%=p.id%>/delete">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="delete">
+        </form>
         <br>
     <% end %>
 <% end %>

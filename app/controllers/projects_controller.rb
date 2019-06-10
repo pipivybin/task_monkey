@@ -38,4 +38,38 @@ post '/projects/new' do
     end
 end
 
+delete '/projects/:id/delete' do
+    if logged_in?
+        Project.delete(params[:id])
+        redirect '/projects'
+    else
+        redirect '/login'
+    end
+end
+
+get '/projects/:id' do
+    if logged_in?
+        @user = current_user
+        @project = Project.find(params[:id])
+        erb :'/projects/show'
+    else
+        redirect '/login'
+    end
+end
+
+get '/projects/:id/edit' do
+    if logged_in?
+        @user = current_user
+        @project = Project.find(params[:id])
+        erb :'/projects/edit'
+    else
+        redirect '/login'
+    end
+end
+
+patch '/projects/:id/edit' do
+
+    
+end
+
 end
