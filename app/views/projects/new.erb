@@ -1,20 +1,16 @@
 <h2>What is your new project?</h2>
-<form method="post" action="/new">
+<form method="post" action="/projects/new">
 <br>
-Project Name: <input type="text" name="project[name]">
-<br>
-<br>
-Assign to: 
-<% @users.each do |u| %>
-<input type="checkbox" name="project[user_ids][]" value="<%=u.id%>"><%= u.username %></input> 
-<% end %>
+Project Name: <input type="text" name="name">
 <br>
 <br>
+
 <ul>
     <li>Task Name: <input type="text" name="task[name]"></li>
     <li>Task Description: <input type="text" name="task[description]"></li>
     <li>Task Deadline: <input type="text" name="task[deadline]"></li>
 </ul>
+
 <br>
 <input type="submit" value="Create">
 </form>

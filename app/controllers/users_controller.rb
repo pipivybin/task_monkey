@@ -26,13 +26,11 @@ end
 
 post '/login' do
     if !params[:username].empty? && !params[:password].empty?
-        user = User.new(params)
+        user = User.find_by(username: params[:username])
         if user.authenticate(params[:password])
-            user.save
             session[:user_id] = user.id
             redirect '/projects'
         else 
-            "Please input your name"
             redirect '/login'
         end
     else
