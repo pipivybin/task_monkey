@@ -15,23 +15,26 @@ get '/projects' do
 end
 
 get '/projects/new' do
-    if logged_in? #verify if user is on the project
-    @users = User.all
-    erb :'projects/new'
+    if logged_in? 
+        @user = current_user
+        erb :'projects/new'
     else
         redirect '/login'
     end
 end
 
 post '/projects/new' do
-    if !params[:name].empty?
-        @project = Project.create(name: params[:name])
-        task = @project.tasks.create(params[:task])
-        user = User.find(current_user) #if logged_in?
-        user.tasks << task
-        redirect '/projects'
-    else 
-        redirect '/projects/new'
+    if logged_in?
+        if !params[:name].empty?
+            @project = Project.create(name: params[:name])
+            task = @project.tasks.create(params[:task])
+            current_user.tasks << task
+            redirect '/projects'
+        else 
+            redirect '/projects/new'
+        end
+    else
+        redirect '/login'
     end
 end
 
