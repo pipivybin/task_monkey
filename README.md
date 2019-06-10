@@ -43,36 +43,10 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 Everyone interacting in Task Monkey’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/pipivybin/task_monkey/blob/master/CODE_OF_CONDUCT.md).
 
-<!-- Three models
-- User
-    > username
-    > password_digest
-- Task
-    > name
-    > descrption
-    > create_time format wrong !!!!!
-    > Deadline format wrong !!!!!
-- Project
-    > name -->
-
-
+To do:
 Views
-<!-- - User:
-    > index
-        > welcome; log in or sign up
-    > login
-    > signup -->
 - Task:
     > new: create new task; create or assign to a project
 - Project:
-    #> list: a list of projects assigned
-    #> show: individual project; show tasks; buttons to delete or edit on a project
-    #> edit: edit project; edit tasks
-    #> delete: delete project (show as finish?); 
     > delete tasks
-    #> new: add new projects; create new tasks
-    #> finished_projects: list of finished projects (with tasks?)
-
-
-
-<------ finished projects view??
+    > finished projects view??
