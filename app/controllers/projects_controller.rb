@@ -70,7 +70,10 @@ end
 patch '/projects/:id/edit' do
     project = Project.find(params[:id])
     project.update(params[:project])
-    Task.update(params[:tasks].keys, params[:tasks].values)    
+    Task.update(params[:tasks].keys, params[:tasks].values) 
+    if !params[:new][:name].empty?
+        project.tasks.create(params[:new])
+    end
     redirect "/projects/#{params[:id]}"   
 end
 

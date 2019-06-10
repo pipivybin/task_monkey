@@ -4,6 +4,7 @@
 <h1>You can edit your project here:</h1>
 <br>
 <h4><input type="text" name=project[name] value="<%= @project.name %>"></h4>
+<br>
     <% @project.tasks.each do |t| %>
         <ul>
         <li><input type="text" name=tasks[<%= t.id %>][name] value="<%= t.name %>"></li>
@@ -14,6 +15,16 @@
         <br>
         <br>
     <% end %>
+
+You can also add a new task:
+<br>
+        <ul>
+        <li>Task Name: <input type="text" name=new[name]></li>
+        <li>Task Description: <input type="text" name=new[description]></li>
+        <li>Task Create Date: <input type="text" name=new[create_date]></li>
+        <li>Task Deadline: <input type="text" name=new[deadline]></li>
+        </ul>
+        <br>
 
 
 <input type="submit" value="Edit">
