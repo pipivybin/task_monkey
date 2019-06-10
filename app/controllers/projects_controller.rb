@@ -25,7 +25,7 @@ end
 
 post '/projects/new' do
     if logged_in?
-        if !params[:name].empty?
+        if !params[:name].empty? && !params[:task][:name].empty?
             @project = Project.create(name: params[:name])
             task = @project.tasks.create(params[:task])
             current_user.tasks << task
@@ -40,8 +40,12 @@ end
 
 delete '/projects/:id/delete' do
     if logged_in?
-        Project.delete(params[:id])
-        redirect '/projects'
+        if project.users.include?(current_user)
+            Project.delete(params[:id])
+            redirect '/projects'
+        else 
+            redirect '/login'
+        end
     else
         redirect '/login'
     end
@@ -57,24 +61,6 @@ get '/projects/:id' do
     end
 end
 
-get '/projects/:id/edit' do
-    if logged_in?
-        @user = current_user
-        @project = Project.find(params[:id])
-        erb :'/projects/edit'
-    else
-        redirect '/login'
-    end
-end
 
-patch '/projects/:id/edit' do
-    project = Project.find(params[:id])
-    project.update(params[:project])
-    Task.update(params[:tasks].keys, params[:tasks].values) 
-    if !params[:new][:name].empty?
-        project.tasks.create(params[:new])
-    end
-    redirect "/projects/#{params[:id]}"   
-end
 
 end
