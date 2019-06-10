@@ -6,10 +6,10 @@
 <h4><input type="text" name=project[name] value="<%= @project.name %>"></h4>
     <% @project.tasks.each do |t| %>
         <ul>
-        <input type="text" name=task[name] value="<%= t.name %>">
-        <li><input type="text" name=task[description] value="<%= t.description %>"></li>
-        <li><input type="text" name=task[create_date] value="<%= t.create_date %>"></li>
-        <li><input type="text" name=task[deadline] value="<%= t.deadline %>"></li>
+        <li><input type="text" name=tasks[<%= t.id %>][name] value="<%= t.name %>"></li>
+        <li><input type="text" name=tasks[<%= t.id %>][description] value="<%= t.description %>"></li>
+        <li><input type="text" name=tasks[<%= t.id %>][create_date] value="<%= t.create_date %>"></li>
+        <li><input type="text" name=tasks[<%= t.id %>][deadline] value="<%= t.deadline %>"></li>
         </ul>
         <br>
         <br>

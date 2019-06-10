@@ -68,8 +68,10 @@ get '/projects/:id/edit' do
 end
 
 patch '/projects/:id/edit' do
-
-    
+    project = Project.find(params[:id])
+    project.update(params[:project])
+    Task.update(params[:tasks].keys, params[:tasks].values)    
+    redirect "/projects/#{params[:id]}"   
 end
 
 end
