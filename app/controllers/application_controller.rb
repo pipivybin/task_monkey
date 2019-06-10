@@ -7,7 +7,6 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, "monkeyking"
-
   end
 
   get "/" do
@@ -28,5 +27,5 @@ class ApplicationController < Sinatra::Base
 
 end
 
-
+#config.active_record.default_timezone = :local
 ##how to clear database???
