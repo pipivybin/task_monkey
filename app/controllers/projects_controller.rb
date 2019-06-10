@@ -40,6 +40,7 @@ end
 
 delete '/projects/:id/delete' do
     if logged_in?
+        project = Project.find(params[:id])
         if project.users.include?(current_user)
             Project.delete(params[:id])
             redirect '/projects'

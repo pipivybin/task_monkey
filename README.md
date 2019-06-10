@@ -1,6 +1,6 @@
-Welcome to task_monkey gem!
+#Welcome to task_monkey gem!
 
-Task Monkey is an everyday task management tool created for you. Each of your task assignments is managed through a project. You can create a project with tasks assigned. Signup/login is required to be able to view and manage your tasks. Have fun managing tasks!
+Task Monkey is an everyday task management tool created for you. Each of your task assignments is managed through a project. You can create a project and assign tasks that you need to work on. Signup and login is required to be able to view and manage your tasks. Have fun managing tasks!
 
 ## Installation
 
@@ -29,7 +29,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Type the below and follow the on screen prompts.
 
-$ task_monkey
+    $ task_monkey
 
 ## Contributing
 
@@ -73,16 +73,6 @@ Views
     #> new: add new projects; create new tasks
     #> finished_projects: list of finished projects (with tasks?)
 
-Models
-> user
-    > has_many :tasks
-    > has_many :projects, through: :tasks
-    > has_secure_password
-> tasks
-    > belongs_to :project
-    > belongs_to :user
-> projects
-    > has_many :tasks
-    > has_many :users, through: :tasks
+
 
 <------ finished projects view??

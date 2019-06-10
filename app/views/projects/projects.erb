@@ -4,11 +4,12 @@
 <% @projects.each do |p| %>
     
     <h4><a href="/projects/<%=p.id%>/edit"><%= p.name %></a></h4>
+    <br>
     <% p.tasks.each do |t| %>
         <ul>
         <li>Task Name: <%=t.name%></li>
         <li>Task Description: <%=t.description%></li>
-        <li>Task Create Date: <%=t.create_date%></li>
+        <li>Task Create Date: <%=t.created_at%></li>
         <li>Task Deadline: <%=t.deadline%></li>
         </ul>
         <br>
