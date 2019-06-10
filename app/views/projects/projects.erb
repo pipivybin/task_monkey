@@ -12,12 +12,12 @@
         <li>Task Deadline: <%=t.deadline%></li>
         </ul>
         <br>
-        <form method="post" action="/projects/<%=p.id%>/delete">
+    <% end %>
+    <form method="post" action="/projects/<%=p.id%>/delete">
         <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="delete">
+        <input type="submit" value="Finish">
         </form>
         <br>
-    <% end %>
 <% end %>
 <br>
 <br>
