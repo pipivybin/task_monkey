@@ -4,8 +4,8 @@
 <h4><%= @project.name %></a></h4>
 <br>
     <% @project.tasks.each do |t| %>
+        <%=t.name%></li>
         <ul>
-        <li>Task Name: <%=t.name%></li>
         <li>Task Description: <%=t.description%></li>
         <li>Task Create Date: <%=t.created_at%></li>
         <li>Task Deadline: <%=t.deadline%></li>

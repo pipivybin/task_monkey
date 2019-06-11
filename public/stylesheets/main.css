@@ -1,10 +1,6 @@
 @media screen {
   /* --- Reset Styles --- */
-  * {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+
 
   html, body {
     height: 100%;
@@ -13,7 +9,7 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightcoral;
+    background-color: lightpink;
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
@@ -57,7 +53,7 @@
 
   .content {
     float: left;
-    width: 60%; /* 480px / 800px */
+    width: 90%; /* 480px / 800px */
   }
 
   .sidebar {

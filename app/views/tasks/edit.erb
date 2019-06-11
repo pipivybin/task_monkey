@@ -6,8 +6,8 @@
 <h4>Project Name: <input type="text" name=project[name] value="<%= @project.name %>"></h4>
 <br>
     <% @project.tasks.each do |t| %>
+        Task Name: <input type="text" name=tasks[<%= t.id %>][name] value="<%= t.name %>">
         <ul>
-        <li>Task Name: <input type="text" name=tasks[<%= t.id %>][name] value="<%= t.name %>"></li>
         <li>Task Description: <input type="text" name=tasks[<%= t.id %>][description] value="<%= t.description %>"></li>
         <li>Task Deadline: <input type="text" name=tasks[<%= t.id %>][deadline] value="<%= t.deadline %>"></li>
         </ul>
@@ -18,8 +18,8 @@
 You can also add a new task:
 <br>
 <br>
+        Task Name: <input type="text" name=new[name]>
         <ul>
-        <li>Task Name: <input type="text" name=new[name]></li>
         <li>Task Description: <input type="text" name=new[description]></li>
         <li>Task Deadline: <input type="text" name=new[deadline]></li>
         </ul>
