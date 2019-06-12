@@ -26,12 +26,37 @@ patch '/projects/:id/edit' do
             Task.update(params[:tasks].keys, params[:tasks].values) 
         end
         if !params[:new][:name].empty?
-            project.tasks.create(params[:new])
+            #binding.pry
+            task = Task.new(params[:new])
+            task.user = current_user
+            task.project = project
+            task.save
+
+            #task = project.tasks.create(params[:new])
+            #current_user.tasks << task
+            #binding.pry
         end
+        redirect "/projects/#{project.id}"
+        
     else
         redirect '/login'
     end
     redirect "/projects/#{params[:id]}"   
+end
+
+delete '/projects/tasks/:id/delete' do
+    if logged_in? 
+        task = Task.find(params[:id]) 
+        #binding.pry
+        if current_user.tasks.include?(task)
+            Task.delete(params[:id])
+            redirect "/projects/#{task.project_id}"
+        else
+            redirect '/login'
+        end
+    else
+        redirect '/login'
+    end
 end
 
 end

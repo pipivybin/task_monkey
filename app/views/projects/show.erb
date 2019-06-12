@@ -1,15 +1,19 @@
 <h2>Hello <%= @user.username %>! Here is Project "<%= @project.name %>" for you: </h2>
 <br>
-
-<h4><%= @project.name %></a></h4>
+<h4><%= @project.name %></h4>
 <br>
     <% @project.tasks.each do |t| %>
+        <form method="post" action="/projects/tasks/<%= t.id %>/delete">
+        <input type="hidden" name="_method" value="delete">
         <%=t.name%></li>
         <ul>
         <li>Task Description: <%=t.description%></li>
         <li>Task Create Date: <%=t.created_at%></li>
         <li>Task Deadline: <%=t.deadline%></li>
         </ul>
+        
+        <input type="submit" value="Finish">
+        </form>
         <br>
         <br>
         <% end %>
@@ -18,3 +22,4 @@
 <br>
 <br>
 <a href="/projects">Back to Project List</a>
+
