@@ -19,7 +19,11 @@ end
 patch '/projects/:id/edit' do
     project = Project.find(params[:id])
     if project.users.include?(current_user)
-        project.update(params[:project])
+        if !params[:project][:name].empty?
+            project.update(params[:project])
+        else
+            redirect "/projects/#{project.id}/edit"
+        end
         if params[:tasks].values.any?{|h| h.values.join.empty?}
             redirect "/projects/#{project.id}/edit"
         else
