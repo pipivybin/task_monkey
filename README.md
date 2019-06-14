@@ -43,10 +43,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 Everyone interacting in Task Monkey’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/pipivybin/task_monkey/blob/master/CODE_OF_CONDUCT.md).
 
-To do:
-Views
-- Task:
-    > new: create new task; create or assign to a project
-- Project:
-    > delete tasks
-    > finished projects view??
+
